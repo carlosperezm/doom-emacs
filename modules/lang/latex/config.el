@@ -72,9 +72,10 @@ If no viewers are found, `latex-preview-pane' is used.")
       ;; quotes or not, via `+latex-enable-plain-double-quotes'
       (sp-local-pair modes "``" nil :unless '(:add sp-in-math-p))))
   ;; Hook lsp if enabled
-  (when (and (featurep! +lsp) (featurep! :tools lsp))
-    (add-hook 'tex-mode-local-vars-hook #'lsp!)
-    (add-hook 'latex-mode-local-vars-hook #'lsp!)))
+  (when (and (featurep! +lsp))
+    (add-hook! '(tex-mode-local-vars-hook
+                 latex-mode-local-vars-hook)
+               #'lsp!)))
 
 
 (use-package! tex-fold
@@ -212,6 +213,7 @@ is mostly for \\section etc."
   :init
   (add-to-list '+latex--company-backends #'company-auctex-environments nil #'eq)
   (add-to-list '+latex--company-backends #'company-auctex-macros nil #'eq))
+
 
 (use-package! company-math
   :when (featurep! :completion company)

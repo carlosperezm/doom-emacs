@@ -35,8 +35,8 @@ Provide a helping hand when working with LaTeX documents.
 + =+cdlatex= Enable [[https://github.com/cdominik/cdlatex][cdlatex]] for fast math insertion.
 + =+fold= Use TeX-fold (from auctex) to fold LaTeX macros to unicode, and make
   folding hook-based and less manual.
-+ =+lsp= Start LSP automatically in `tex-mode-hook`. This
-  requires the =:tools lsp= module.
++ =+lsp= Start LSP automatically in `tex-mode-hook`. This requires the =:tools
+  lsp= module.
 
 ** Plugins
 + [[http://www.gnu.org/software/auctex/][auctex]]
